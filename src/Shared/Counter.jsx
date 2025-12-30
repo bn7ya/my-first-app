@@ -2,7 +2,7 @@ import './Counter.css'
 import Circle from './Circle';
 
 function Counter({ number }){
-    const circles = Math.floor(number / 10) + 1;
+    const circles = number > 0 ? Math.floor(Math.log10(number)) : 1;
 
 
     return(

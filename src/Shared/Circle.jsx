@@ -7,7 +7,7 @@ function Circle({index, count}) {
         size = 1
     }
     return (
-        <div className='circle' style={{ transform: `scale(${size})` }}></div>        
+        <div className='shape' style={{ transform: `scale(${size})` }}></div>        
     )
 }
 

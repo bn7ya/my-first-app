@@ -7,21 +7,21 @@ import Counter from './Shared/Counter'
 
 function App() {
   const titleStyle = { 
-    textAlign: 'center', 
-    background: 'linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%)',
+    textAlign: 'right', 
+    background: 'linear-gradient(170deg, rgba(29, 92, 117, 1) 0%, rgba(87, 182, 199, 1) 50%, rgba(36, 180, 113, 1) 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    margin: '5px', 
-    padding: '5px' 
+    margin: '5%', 
+    padding: '1%' 
   }
 
   const descStyle = { 
-    textAlign: 'center', 
+    textAlign: 'left', 
     background: 'linear-gradient(90deg, rgba(42, 138, 155, 1) 0%, rgba(100, 199, 87, 1) 50%, rgba(83, 237, 229, 1) 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    margin: '5px', 
-    padding: '5px' 
+    margin: '5%', 
+    padding: '1%',
   }
 
   const [count, setCount] = useState(0)
