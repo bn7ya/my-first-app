@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
 import './App.css'
-import Button from './Button'
+import Button from './Shared/Button'
 
 
 function App() {
