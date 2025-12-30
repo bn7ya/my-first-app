@@ -1,20 +1,33 @@
 .shape {
-    background: linear-gradient(155deg, rgba(42, 138, 155, 1) 0%, rgba(100, 199, 87, 1) 50%, rgba(83, 237, 229, 1) 100%);
-    margin: 10px;
-    max-width: 40px;
-    min-width: 20px;
-    min-height: 40px;
-    max-height: 40px;
-    transition: all 150ms ease-in-out;
-    border-radius: 25.25px;
-    box-shadow: 10px 10px 40px rgba(158, 158, 158, 0.493);
-    opacity: 0.7;
+    background: linear-gradient(155deg, var(--gradient-start) 0%, var(--gradient-mid) 50%, var(--gradient-end) 100%);
+    width: 32px;
+    height: 40px;
+    transition: all var(--transition-normal);
+    border-radius: var(--radius-md);
+    box-shadow:
+        0 4px 12px rgba(83, 237, 229, 0.2),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0.75;
+    animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-.shape:hover{
-    scale:1.01 ;
-    transition: all 150ms linear;
+.shape:nth-child(odd) {
+    animation-delay: 0.05s;
+}
+
+.shape:nth-child(even) {
+    animation-delay: 0.1s;
+}
+
+.shape:hover {
+    transform: scale(1.15) translateY(-4px);
     opacity: 1;
-    min-width: 30px;
-    box-shadow: 0px 0px 20px rgba(5, 216, 128, 0.849);
+    box-shadow:
+        0 8px 24px rgba(83, 237, 229, 0.4),
+        0 0 20px rgba(100, 199, 87, 0.3);
+}
+
+.shape:active {
+    transform: scale(0.95);
+    transition: all var(--transition-fast);
 }

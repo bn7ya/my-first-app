@@ -1,30 +1,62 @@
 .button {
-    background: linear-gradient(90deg, rgba(42, 138, 155, 1) 0%, rgba(100, 199, 87, 1) 50%, rgba(83, 237, 229, 1) 100%);
-    padding: 1.2%;
-    color: rgb(0, 0, 0);
+    background: var(--primary-gradient);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    padding: 0.8rem 2rem;
+    color: rgb(20, 20, 20);
     border: none;
-    border-radius: 25.25px;
+    border-radius: var(--radius-lg);
     cursor: pointer;
-    box-shadow: 2px 2px 10px rgba(202, 202, 202, 0.486);
-    font-weight: bold;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: all ease-in-out 90ms;
-    opacity: 0.7;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: inherit;
+    transition: all var(--transition-normal);
+    opacity: 0.85;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out 0.6s both;
+}
 
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
 }
 
 .button:hover {
-    opacity: 0.9;
-    color: rgb(75, 75, 75);
-    box-shadow: 0px 0px 20px rgba(235, 234, 234, 0.281);
-    scale: 1.05;
-    transition: all ease-in-out 90ms;
+    opacity: 1;
+    color: rgb(10, 10, 10);
+    background-position: 100% 50%;
+    box-shadow:
+        0 4px 15px rgba(83, 237, 229, 0.3),
+        0 0 30px rgba(100, 199, 87, 0.2);
+    transform: scale(1.05) translateY(-2px);
+}
+
+.button:hover::before {
+    left: 100%;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(83, 237, 229, 0.4),
+        0 4px 15px rgba(83, 237, 229, 0.3);
 }
 
 .button:active {
     opacity: 1;
-    color: rgb(75, 75, 75);
-    box-shadow: 0px 0px 5px rgba(247, 244, 244, 0.616);
-    scale: 1;
-    transition: all ease-in-out 32ms;
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(83, 237, 229, 0.4);
+    transition: all var(--transition-fast);
 }
