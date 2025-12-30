@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import './App.css'
 import Button from './Shared/Button'
+import Counter from './Shared/Counter'
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
       <h1 style={titleStyle}>التطبيق الأول بـ React</h1>
       <p style={descStyle}>العمل الذي سيكون افتتاحية لأفضل الواجهات في العالم بإذن الله</p>
       <Button text={'اضغط'} onClick={() => setCount(count + 1)}></Button>
-      <h1 className='counter'>{count}</h1>
+      <Counter number={count}/>
     </div>
   )
 }
